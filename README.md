@@ -23,7 +23,10 @@ Local Docker Deployment:
 
 * Obviously Pagination, Steps would include grabbing the cursor from the graphql api response and placing that in the before and after (graphql query) to fetch the next patch depending which direction the user wants to do.
 
+* Possibly filter the results by code language
+
 #### Deployment
 
-* Create a yaml file for git hub to read directly from the user's account by passing in the PAT name as a global variable 
+* Create a yaml file for git hub to read directly from the user's account by passing in the PAT secret as a global variable
+* or expose the env var in a deployment file so that it can be passed at runtime.
 
