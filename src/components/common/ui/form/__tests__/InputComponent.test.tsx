@@ -6,13 +6,13 @@ describe('Input Component', () => {
 
     it('Renders Input Component With No Errors', () => {
         render(<InputComponent handleSearchQuery={handleSearchQuery} label='Test Label' />);
-        const component = screen.getByTestId('repoSearchInputComponent');
+        const component = screen.getByTestId('inputComponent');
         expect(component).toBeInTheDocument();
     });
 
     it('Should Render Correct Input', () => {
         render(<InputComponent handleSearchQuery={handleSearchQuery} label='Test Label' />);
-        const component = screen.getByTestId('repoSearchInput');
+        const component = screen.getByTestId('searchInput');
         expect(component.value).toBe('');
         fireEvent.change(component, { target: { value: 'facebook' } });
         expect(component.value).toBe('facebook');
@@ -20,7 +20,7 @@ describe('Input Component', () => {
 
     it('Should Handle Change Function', () => {
         render(<InputComponent handleSearchQuery={handleSearchQuery} label='Test Label' />);
-        const component = screen.getByTestId('repoSearchInput');
+        const component = screen.getByTestId('searchInput');
         fireEvent.change(component, { target: { value: 'facebook' } });
         expect(handleSearchQuery).toBeCalled();
     });

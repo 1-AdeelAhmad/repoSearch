@@ -1,6 +1,5 @@
 import { GraphQLError } from 'graphql';
-import { GET_REPO_QUERY } from '../api/repo';
-import { RepoItem } from '../types/api';
+import { GET_REPO_QUERY } from '../pages/app/common/api/repo';
 
 export const repoMock = [
     {
@@ -21,7 +20,7 @@ export const repoMock = [
                                 name: 'testRepo',
                                 stargazerCount: 244,
                                 url: 'testUrl',
-                            } as RepoItem,
+                            },
                             // cursor: '12',
                         },
                     ],

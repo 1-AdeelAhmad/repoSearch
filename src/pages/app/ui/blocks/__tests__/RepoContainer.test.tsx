@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { dataItem } from '../../../mocks/mockdata';
+import { dataItem } from '../../../../../mocks/mockdata';
 import RepoContainer from '../RepoContainer';
 
 describe('Repo Container Component', () => {

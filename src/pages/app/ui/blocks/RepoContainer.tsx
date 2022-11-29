@@ -1,13 +1,13 @@
-import React from 'react';
-import { tableRowTitle } from '../../helpers/conts';
-import { formatRowTitle } from '../../helpers/helperFunctions';
-import { RepoContainerProps } from '../../types/components';
-import ErrorComponent from '../common/ErrorComponent';
-import LoadingComponent from '../common/LoadingComponent';
+import { tableRowTitle } from '../../common/helpers/conts';
+import { RepoContainerProps } from '../../common/types/components';
+import ErrorComponent from '../../../../components/common/ui/ErrorComponent';
+import LoadingComponent from '../../../../components/common/ui/LoadingComponent';
+import RowTitle from '../../../../components/common/ui/table/RowTitle';
 
 const RepoContainer = ({ isError, isLoading, data }: RepoContainerProps) => {
     if (isLoading) return <LoadingComponent />;
     if (isError) {
+        console.log(isError);
         return <ErrorComponent error='unable to retrieve repos' />;
     }
 
@@ -18,7 +18,11 @@ const RepoContainer = ({ isError, isLoading, data }: RepoContainerProps) => {
         >
             <table className='min-w-full divide-y divide-gray-100'>
                 <thead className='bg-gray-5 drop-shadow-md z-10'>
-                    <tr>{tableRowTitle.map((title) => formatRowTitle(title.name))}</tr>
+                    <tr>
+                        {tableRowTitle.map((title, index) => (
+                            <RowTitle key={title.name + index} label={title.name} />
+                        ))}
+                    </tr>
                 </thead>
                 <tbody className='divide-y divide-gray-200 bg-white'>
                     {data.map((repo, index) => (

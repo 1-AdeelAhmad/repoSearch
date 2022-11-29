@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { InputComponentProps } from '../../types/components';
+import { useEffect, useState } from 'react';
+import { InputComponentProps } from '../../../../pages/app/common/types/form';
 
 const InputComponent = ({ handleSearchQuery, label }: InputComponentProps) => {
     const [value, setValue] = useState<string>('');
@@ -18,7 +18,7 @@ const InputComponent = ({ handleSearchQuery, label }: InputComponentProps) => {
 
     return (
         <div
-            data-testid='repoSearchInputComponent'
+            data-testid='inputComponent'
             className='relative border border-gray-300 rounded-md py-3 shadow-sm focus-within:ring-1 w-full px-3'
         >
             <label
@@ -28,7 +28,7 @@ const InputComponent = ({ handleSearchQuery, label }: InputComponentProps) => {
                 {label}
             </label>
             <input
-                data-testid='repoSearchInput'
+                data-testid='searchInput'
                 type='text'
                 name='name'
                 id='name'

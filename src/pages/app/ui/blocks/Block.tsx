@@ -1,9 +1,4 @@
-import React, { ReactNode } from 'react';
-
-type BlockProps = {
-    children: ReactNode;
-    col?: boolean;
-};
+import { BlockProps } from '../../common/types/components';
 
 const Block = ({ children, col }: BlockProps) => {
     return (

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useQuery } from '@apollo/client';
-import Layout from './components/layout/Layout';
-import RepoContainer from './components/container/RepoContainer';
-import { RepoItem } from './types/api';
-import Block from './components/layout/Block';
-import InputComponent from './components/common/InputComponent';
-import { GET_REPO_QUERY } from './api/repo';
-import { sortRepoResponseData } from './helpers/helperFunctions';
+import Layout from './ui/blocks/Layout';
+import RepoContainer from './ui/blocks/RepoContainer';
+import { RepoItem } from './common/types/api';
+import Block from './ui/blocks/Block';
+import { GET_REPO_QUERY } from './common/api/repo';
+import { sortRepoResponseData } from './common/helpers/helperFunctions';
+import SearchComponent from './ui/blocks/component/SearchComponent';
 
 const App = () => {
     const [getSearchQuery, setSearchQuery] = useState<string>('is:public');
@@ -29,9 +29,7 @@ const App = () => {
         <div data-testid='appContainer'>
             <Layout>
                 <Block>
-                    <div className='w-1/2 px-5 md:px-20'>
-                        <InputComponent label='repo search' handleSearchQuery={handleSearchQuery} />
-                    </div>
+                    <SearchComponent handleSearchQuery={handleSearchQuery} />
                 </Block>
                 <RepoContainer isLoading={loading} isError={error} data={repoData} />
             </Layout>

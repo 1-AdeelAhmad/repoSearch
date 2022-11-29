@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { ApolloClient, InMemoryCache, createHttpLink, ApolloProvider } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import './index.css';
-import App from './App';
+import App from './pages/app';
 import reportWebVitals from './reportWebVitals';
-import { REPO_URL } from './helpers/conts';
+import { REPO_URL } from './pages/app/common/helpers/conts';
 
 const httpLink = createHttpLink({
     uri: REPO_URL,

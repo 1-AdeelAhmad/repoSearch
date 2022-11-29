@@ -1,5 +1,4 @@
-import React from 'react';
-import { LayoutProps } from '../../types/components';
+import { LayoutProps } from '../../common/types/components';
 
 import Block from './Block';
 

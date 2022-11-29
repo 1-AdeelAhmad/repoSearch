@@ -1,5 +1,4 @@
-import React from 'react';
-import { ErrorComponentProps } from '../../types/components';
+import { ErrorComponentProps } from './types/components';
 
 const ErrorComponent = ({ error }: ErrorComponentProps) => {
     return (
